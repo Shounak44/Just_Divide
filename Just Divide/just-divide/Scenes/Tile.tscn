@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://byy3n31uk8x8f"]
+
+[ext_resource type="Script" uid="uid://p77dsnuargbc" path="res://Scripts/tile.gd" id="1_iof5j"]
+[ext_resource type="FontFile" uid="uid://evvadmnshgco" path="res://Assets/UI/baloo-2/Baloo2-ExtraBold.ttf" id="2_r4md0"]
+
+[node name="Tile" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1299.0
+offset_bottom = -883.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_iof5j")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="Sprite2D" parent="Panel"]
+position = Vector2(70.60715, 70.607155)
+scale = Vector2(1.6137875, 1.6137874)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NumberLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r4md0")
+theme_override_font_sizes/font_size = 60
+text = "2"

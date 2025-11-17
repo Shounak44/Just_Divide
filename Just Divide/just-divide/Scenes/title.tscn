@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://bboylv8rjvpx7"]
+
+[ext_resource type="Script" uid="uid://0wqurpnfr5cg" path="res://Scripts/title.gd" id="1_2qdx2"]
+[ext_resource type="Texture2D" uid="uid://cml01x6fyu2by" path="res://Assets/Background/Game Dev Task Eklavya/Desktop_JustDivide_Game_2.png" id="1_ekrfg"]
+[ext_resource type="Texture2D" uid="uid://c6mdon0ahf86l" path="res://Assets/Tiles/Placement_Box.png" id="2_fp2oq"]
+[ext_resource type="Texture2D" uid="uid://b6551fcpy26rq" path="res://Assets/Background/Game Dev Task Eklavya/Cat.png" id="3_fp2oq"]
+[ext_resource type="Texture2D" uid="uid://dvyf546g51246" path="res://Assets/UI/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@2x/Buttons/Rect/PlayIcon/Default@2x.png" id="4_yosvi"]
+[ext_resource type="Texture2D" uid="uid://d1dgi3n4wrm0m" path="res://Assets/UI/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@2x/Buttons/Rect/PlayIcon/Hover@2x.png" id="5_2qdx2"]
+[ext_resource type="AudioStream" uid="uid://dnt4o0toiy4fc" path="res://Assets/music/awesomeness.mp3" id="7_3eqdi"]
+[ext_resource type="FontFile" uid="uid://evvadmnshgco" path="res://Assets/UI/baloo-2/Baloo2-ExtraBold.ttf" id="8_yu0ss"]
+[ext_resource type="Texture2D" uid="uid://ceygjhkboui6o" path="res://Assets/Background/Game Dev Task Eklavya/eklavya.png" id="9_6aagf"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2qdx2")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 101.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ekrfg")
+
+[node name="Background2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -353.99997
+offset_top = -308.0
+offset_right = -212.99997
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+texture = ExtResource("2_fp2oq")
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(715, 140)
+texture = ExtResource("3_fp2oq")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = 85.0
+offset_right = 171.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_yosvi")
+texture_pressed = ExtResource("4_yosvi")
+texture_hover = ExtResource("5_2qdx2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -50)
+stream = ExtResource("7_3eqdi")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = -182.0
+offset_right = 276.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_yu0ss")
+theme_override_font_sizes/font_size = 100
+text = "JUST DIVIDE"
+
+[node name="Eklavya" type="Sprite2D" parent="."]
+position = Vector2(1317, 953)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_6aagf")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -1,0 +1,638 @@
+[gd_scene load_steps=24 format=3 uid="uid://bhj6nauapqr03"]
+
+[ext_resource type="Texture2D" uid="uid://cml01x6fyu2by" path="res://Assets/Background/Game Dev Task Eklavya/Desktop_JustDivide_Game_2.png" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://4hed4gfe2e2p" path="res://Scripts/game.gd" id="1_o5yvi"]
+[ext_resource type="FontFile" uid="uid://evvadmnshgco" path="res://Assets/UI/baloo-2/Baloo2-ExtraBold.ttf" id="2_qxrlw"]
+[ext_resource type="FontFile" uid="uid://wb4lyfbp24qe" path="res://Assets/UI/baloo-2/Baloo2-Bold.ttf" id="3_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://byd2d07y4d6kd" path="res://Assets/UI/Levels and Score.png" id="4_i6g32"]
+[ext_resource type="Texture2D" uid="uid://b6551fcpy26rq" path="res://Assets/Background/Game Dev Task Eklavya/Cat.png" id="5_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://c6mdon0ahf86l" path="res://Assets/Tiles/Placement_Box.png" id="6_v158k"]
+[ext_resource type="Texture2D" uid="uid://cvuhq5dpsdj3c" path="res://Assets/Tiles/placement_box_orange.png" id="7_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://cwkcxxx36i186" path="res://Assets/UI/trash_cleanup.png" id="8_ldgsr"]
+[ext_resource type="Texture2D" uid="uid://c6ue2h26o7p05" path="res://Assets/UI/PAUSE-Photoroom.png" id="9_ldgsr"]
+[ext_resource type="Texture2D" uid="uid://bf7pkokkw30qb" path="res://Assets/UI/INFO-Photoroom.png" id="10_ldgsr"]
+[ext_resource type="AudioStream" uid="uid://djuf6ymh6gkmr" path="res://Assets/music/Help.mp3" id="11_mg4q0"]
+[ext_resource type="Script" uid="uid://ix47euf4nx0t" path="res://Scripts/pause.gd" id="12_7nbq1"]
+[ext_resource type="Texture2D" uid="uid://drqh6b2vnfs3s" path="res://Assets/Tiles/blue.png" id="12_rfjv2"]
+[ext_resource type="Texture2D" uid="uid://dlm3hlxhyoijg" path="res://Assets/UI/Repeat-Right.png" id="13_1phco"]
+[ext_resource type="AudioStream" uid="uid://cx3kd4fa4r43l" path="res://Assets/music/happy_adveture.mp3" id="14_1phco"]
+[ext_resource type="Script" uid="uid://snxkp2du40va" path="res://Scripts/control.gd" id="15_iivbl"]
+[ext_resource type="Texture2D" uid="uid://3fhpcui6fal4" path="res://Assets/UI/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@4x/Buttons/Square/Play/Default@4x.png" id="16_7nbq1"]
+[ext_resource type="Texture2D" uid="uid://reo4fhv2crj3" path="res://Assets/UI/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@4x/Buttons/Square/Play/Hover@4x.png" id="17_exi56"]
+[ext_resource type="Texture2D" uid="uid://6apiyuyqjivo" path="res://Assets/UI/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@4x/Buttons/Square/Home/Default@4x.png" id="18_7t8sx"]
+[ext_resource type="Texture2D" uid="uid://b6f1uyxawgyoc" path="res://Assets/UI/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@4x/Buttons/Square/Home/Hover@4x.png" id="19_mg4q0"]
+[ext_resource type="Texture2D" uid="uid://cspncrodwe4h0" path="res://Assets/UI/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@0.5x/Button/Rect/Default@0.5x.png" id="21_7t8sx"]
+[ext_resource type="Texture2D" uid="uid://doaeo82ybxfhj" path="res://Assets/UI/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/Prinbles_Asset_UNDER (v 1.1) (9_7_2023)/png@0.5x/Button/Rect/Hover@0.5x.png" id="22_mg4q0"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5yvi")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ebmjs")
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 182.0
+grow_horizontal = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qxrlw")
+theme_override_font_sizes/font_size = 35
+text = "
+JUST DIVIDE"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SubtitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.92156863, 0.7058824, 1)
+theme_override_colors/font_outline_color = Color(0.88235295, 0.32941177, 0.3019608, 1)
+theme_override_constants/line_spacing = -5
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("3_wrm1d")
+theme_override_font_sizes/font_size = 21
+text = "
+Divide the numbers to solve the row and columns"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PlacementBox" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 367.0
+offset_right = 328.5
+offset_bottom = 523.0
+scale = Vector2(4, 4)
+texture = ExtResource("6_v158k")
+
+[node name="CatAndStats" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -60.0
+offset_top = -23.0
+offset_right = -20.0
+offset_bottom = 17.0
+
+[node name="LevelBadge" type="TextureRect" parent="CatAndStats"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 383.0
+offset_right = 444.0
+offset_bottom = 503.0
+texture = ExtResource("4_i6g32")
+
+[node name="Label" type="Label" parent="CatAndStats/LevelBadge"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 39.0
+offset_right = 130.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("3_wrm1d")
+
+[node name="ScoreBadge" type="TextureRect" parent="CatAndStats"]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 382.0
+offset_right = 891.0
+offset_bottom = 502.0
+texture = ExtResource("4_i6g32")
+
+[node name="Label" type="Label" parent="CatAndStats/ScoreBadge"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 40.0
+offset_right = 139.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("3_wrm1d")
+
+[node name="Cat" type="TextureRect" parent="CatAndStats"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 169.0
+offset_top = 216.0
+offset_right = 873.0
+offset_bottom = 395.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_1l0tm")
+
+[node name="Grid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 482.99997
+offset_right = 877.0
+offset_bottom = 1083.0
+scale = Vector2(0.7, 0.7)
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="Slot1" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot2" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot3" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot4" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot5" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot6" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot7" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot8" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot9" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot10" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot10"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot11" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot11"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot12" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot12"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot13" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot13"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot14" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot14"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot15" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot15"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot16" type="TextureRect" parent="Grid"]
+layout_mode = 2
+texture = ExtResource("6_v158k")
+stretch_mode = 1
+
+[node name="DropZone" type="Control" parent="Grid/Slot16"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SidebarBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 799.0
+offset_top = 266.0
+offset_right = 1652.0
+offset_bottom = 1546.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_1l0tm")
+
+[node name="Keep" type="TextureRect" parent="."]
+modulate = Color(0, 1, 0.5372549, 1)
+layout_mode = 0
+offset_left = 1007.99994
+offset_top = 375.0
+offset_right = 1149.0
+offset_bottom = 516.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_v158k")
+
+[node name="MarginContainer" type="MarginContainer" parent="Keep"]
+layout_mode = 0
+offset_right = 142.8573
+offset_bottom = 138.57141
+
+[node name="KeepTile" type="Panel" parent="Keep/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 467.0
+offset_right = 1113.0
+offset_bottom = 547.00006
+theme_override_colors/font_color = Color(1.2995303e-06, 0.51872236, 0.33001873, 1)
+theme_override_fonts/font = ExtResource("3_wrm1d")
+theme_override_font_sizes/font_size = 50
+text = "KEEP"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 747.0
+offset_right = 1133.0
+offset_bottom = 827.00006
+theme_override_colors/font_color = Color(1, 0.30588236, 0, 1)
+theme_override_fonts/font = ExtResource("3_wrm1d")
+theme_override_font_sizes/font_size = 50
+text = "TRASH"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0.5411765, 1)
+position = Vector2(1055.25, 662)
+scale = Vector2(2.322695, 1)
+texture = ExtResource("6_v158k")
+
+[node name="Display1" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 944.99994
+offset_top = 613.00006
+offset_right = 1085.9999
+offset_bottom = 754.00006
+scale = Vector2(0.7, 0.7)
+
+[node name="Display2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1069.0
+offset_top = 613.0
+offset_right = 1210.0
+offset_bottom = 754.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Trash" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 987.0
+offset_top = 806.0
+offset_right = 1128.0
+offset_bottom = 947.0
+texture = ExtResource("8_ldgsr")
+
+[node name="Control" type="Control" parent="Trash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1037.0
+offset_top = 879.0
+offset_right = 1082.0
+offset_bottom = 927.0
+theme_override_fonts/font = ExtResource("3_wrm1d")
+theme_override_font_sizes/font_size = 30
+text = "x10"
+
+[node name="Info" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1352.0
+offset_top = 2.0
+offset_right = 1438.0
+offset_bottom = 93.0
+texture_normal = ExtResource("10_ldgsr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Info"]
+stream = ExtResource("11_mg4q0")
+volume_db = 20.0
+pitch_scale = 1.2
+
+[node name="Pause" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 93.0
+offset_bottom = 77.0
+texture_normal = ExtResource("9_ldgsr")
+script = ExtResource("12_7nbq1")
+
+[node name="Blue" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(81, 884)
+texture = ExtResource("12_rfjv2")
+
+[node name="UndoButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 851.0
+offset_right = 109.0
+offset_bottom = 907.0
+texture_normal = ExtResource("13_1phco")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_1phco")
+volume_db = 10.0
+autoplay = true
+
+[node name="Voices" type="AudioStreamPlayer2D" parent="."]
+volume_db = 20.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("15_iivbl")
+
+[node name="Panel" type="TextureRect" parent="CanvasLayer/PauseMenu"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.63529414)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1400.0
+offset_bottom = 984.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ebmjs")
+
+[node name="ResumeButton" type="TextureButton" parent="CanvasLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 303.0
+offset_top = 326.0
+offset_right = 623.0
+offset_bottom = 658.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("16_7nbq1")
+texture_pressed = ExtResource("16_7nbq1")
+texture_hover = ExtResource("17_exi56")
+
+[node name="HomeButton" type="TextureButton" parent="CanvasLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 771.0
+offset_top = 326.0
+offset_right = 1091.0
+offset_bottom = 658.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("18_7t8sx")
+texture_pressed = ExtResource("18_7t8sx")
+texture_hover = ExtResource("19_mg4q0")
+
+[node name="Lose" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="LoseMenu" type="Control" parent="Lose"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Lose/LoseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Lose/LoseMenu/Panel"]
+layout_mode = 0
+offset_left = 383.00003
+offset_top = 353.0
+offset_right = 623.0
+offset_bottom = 473.0
+scale = Vector2(3, 3)
+texture = ExtResource("4_i6g32")
+
+[node name="Label" type="Label" parent="Lose/LoseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.5
+offset_top = -79.0
+offset_right = 245.5
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qxrlw")
+theme_override_font_sizes/font_size = 100
+text = "YOU LOSE !"
+
+[node name="Play_Again" type="TextureButton" parent="Lose/LoseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = 190.0
+offset_right = 2.0
+offset_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture_normal = ExtResource("21_7t8sx")
+texture_pressed = ExtResource("21_7t8sx")
+texture_hover = ExtResource("22_mg4q0")
+
+[node name="Label2" type="Label" parent="Lose/LoseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = 203.5
+offset_right = 73.0
+offset_bottom = 251.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qxrlw")
+theme_override_font_sizes/font_size = 30
+text = "Play Again"
